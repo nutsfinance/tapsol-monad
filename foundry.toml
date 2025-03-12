@@ -1,0 +1,17 @@
+[profile.default]
+evm-version = "cancun"
+src = "src"
+out = "out"
+libs = ["lib"]
+via_ir = true
+optimizer = true
+optimizer-runs = 10000
+remappings = [
+    "wormhole-solidity-sdk/=lib/wormhole-solidity-sdk/src/",
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+]
+fs_permissions = [{ access = "read-write", path = "./"}]
+
+[rpc_endpoints]
+monad-testnet = "${MONAD_TESTNET_RPC}"
+base-sepolia = "${BASE_SEPOLIA_RPC}"
